@@ -91,10 +91,15 @@ By running `plottedfigures.py`, you can generate:
 - 🔋 Battery SOC vs Time
 - ![](batterySOC.png)
 - ⚡ PV, Wind, and Gas Turbine vs Heater Demand
+-  ![](Powerprofile.png)
 - 🔄 Grid Export vs SOC
+-  ![](Gridexportpower.png)
 - ♨️ Heater Inlet/Outlet Temperature vs Time
+-  ![](Heatenergyprofile.png)
 - 🚨 Constraint Compliance Charts:
+-  ![](Constrainschecks.png)
   - SOC bounds
+  -  ![](HeatControllimits.png)
   - Gas turbine limits (350–1000 kW)
   - Battery charge/discharge (±400 kW)
 

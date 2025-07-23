@@ -102,6 +102,6 @@ Rashida Olomowewe, Walmy Fernández, Oluwajoba Oyefusi, Sofia Farakhutdinova, Mo
 ## 📜License
 This project is academic in nature and was developed as part of the 2025 coursework for the *Co-Simulation* module within the **Master's in Decentralized Smart Energy Systems** at *Université de Lorraine – Master ENERGIE*.
 
-**Contact the authors prior to any commercial use or distribution**
+**Please Contact the authors prior to any commercial use or distribution**
 
 

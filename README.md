@@ -88,12 +88,12 @@ Each subsystem — PV, Wind, Battery, Gas Turbine, Heater, Controller — is mod
 
 By running `plottedfigures.py`, the following results were obtained:
 
-- ![PV, Wind, and Gas Turbine vs Heater Demand](Powerprofile.png)
+- PV, Wind, and Gas Turbine vs Heater Demand![](Powerprofile.png)
 - 🔄 Grid Export vs SOC ![](Gridexportpower.png)
 - ♨️ Heater Inlet/Outlet Temperature vs Time ![](Heatenergyprofile.png)
 - 🚨 Constraint Compliance Charts ![](Constrainschecks.png)
 - SOC bounds ![](HeatControllimits.png)
-- ![Battery SOC vs Time](batterySOC.png)
+- Battery SOC vs Time![](batterySOC.png)
 
 
 

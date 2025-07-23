@@ -92,7 +92,7 @@ By running `plottedfigures.py`, the following results were obtained:
 | ![](Gridexportpower.png)<br><br>**Fig 2**: Grid Export vs SOC | Export occurs when SOC reaches **~0.98**. Battery prioritized before export. |
 | ![](Heatenergyprofile.png)<br><br>**Fig 3**: Heater Inlet/Outlet Temperature | Inlet: **250–280 K**. Outlet stable at **~363.5 K**. Heater setpoint maintained. |
 | ![](Constrainschecks.png)<br><br>**Fig 4**: Constraint Compliance | SOC: **0.2–0.98**, Turbine: **350 kW–1 MW**, Battery: **±400 kW**. All within limits. |
-| ![](HeatControllimits.png)<br><br>**Fig 5**: SOC Bounds | SOC stays between **0.2** and **0.98** during full simulation. |
+| ![](HeatControllimits.png)<br><br>**Fig 5**: Heater Control Limits |  Outlet temperature stays within **358.5 K – 368.5 K**. Setpoint maintained at **363.5 K** throughout simulation. |
 | ![](batterySOC.png)<br><br>**Fig 6**: Battery SOC vs Time | SOC rises with surplus, drops during deficit. Starting at **0.5**. |
 
 ## Credits

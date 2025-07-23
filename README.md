@@ -1,4 +1,4 @@
-# 🌍 Co-Simulation of a Hybrid Renewable Energy System for District Heating in Cold Climates
+# Co-Simulation of a Hybrid Renewable Energy System for District Heating in Cold Climates
 
 [![OpenModelica](https://img.shields.io/badge/OpenModelica-1.22.0-lightgrey)](https://openmodelica.org/)
 [![PYTHON](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
@@ -7,15 +7,15 @@ A smart, modular, and real-time controlled energy system designed for Swedish wi
 
 ---
 
-## 📖 Introduction
+## Introduction
 
 In frigid countries like Sweden, heating can account for up to **70%** of residential energy demand — especially during winter. But fossil-fueled systems pose both environmental and economic concerns under volatile weather.
 
 This project tackles that challenge by simulating a **smart hybrid renewable energy system** that ensures:
 
-- 🔥 Constant thermal output  
-- 🌱 Prioritization of renewables  
-- 🧠 Dynamic control using a Python-based co-simulation framework  
+- Constant thermal output  
+- Prioritization of renewables  
+- Dynamic control using a Python-based co-simulation framework  
 
 Each subsystem — PV, Wind, Battery, Gas Turbine, Heater, Controller — is modeled in **OpenModelica**, exported as **FMUs**, and integrated in **Python** through real-time orchestration logic.
 
@@ -23,51 +23,52 @@ Each subsystem — PV, Wind, Battery, Gas Turbine, Heater, Controller — is mod
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
-- ✅ Maintain **363.5 K** outlet temperature at all times  
-- ✅ Prioritize **renewable energy** (PV + Wind)  
-- ✅ Use **battery storage** to absorb surplus and supply deficit  
-- ✅ Activate **gas turbine** only when necessary  
-- ✅ Export to **grid** only when storage is full  
+-  Maintain **363.5 K** outlet temperature at all times  
+-  Prioritize **renewable energy** (PV + Wind)  
+-  Use **battery storage** to absorb surplus and supply deficit  
+-  Activate **gas turbine** only when necessary  
+-  Export to **grid** only when storage is full  
 
 ---
 
-## 🧠 System Overview
+## System Overview
 
 ### Components
 
-- ☀️ **PV FMU** – generates electricity based on irradiance  
-- 🌬 **Wind Turbine FMU** – complements solar, especially at night  
-- 🔋 **Battery FMU** – buffers surplus and meets shortfalls  
-- 🔥 **Gas Turbine FMU** – dispatchable power & heat with efficiency recovery  
-- ♨️ **Heater FMU** – uses electricity + recovered heat to heat water  
-- 🧠 **Controller FMU** – smart logic to dispatch power and balance constraints  
+-  **PV FMU** – generates electricity based on irradiance  
+-  **Wind Turbine FMU** – complements solar, especially at night  
+-  **Battery FMU** – buffers surplus and meets shortfalls  
+-  **Gas Turbine FMU** – dispatchable power & heat with efficiency recovery  
+-  **Heater FMU** – uses electricity + recovered heat to heat water  
+-  **Controller FMU** – smart logic to dispatch power and balance constraints  
 
 ### Simulation Context
 
-- 📅 Realistic **3-day Swedish winter** with sunny, rainy, and snowy periods  
-- 📥 Inputs: 15-min interval irradiance, wind speed, ambient & water temperatures  
-- ⏱ Time step: **900 seconds**
+-  Realistic **3-day Swedish winter** with sunny, rainy, and snowy periods  
+-  Inputs: 15-min interval irradiance, wind speed, ambient & water temperatures  
+-  Time step: **900 seconds**
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
-├── project.py # Main co-simulation script
-├── plottedfigures.py # Plotting script for result analysis
-├── data.csv # Environmental input data
-├── results.csv # Output simulation results
+├── project.py                   # Main co-simulation script
+├── plottedfigures.py           # Plotting script for result analysis
+├── data.csv                    # Environmental input data
+├── results.csv                 # Output simulation results
 ├── myFMU/
-│ └── myFMU.py # FMU wrapper class
-├── FMUDir/systemproject/
-│ ├── PV_model.fmu
-│ ├── WindT.fmu
-│ ├── BatteryModel.fmu
-│ ├── GasTurbine.fmu
-│ ├── Heater.fmu
-│ └── lo.fmu
-└── CO-SIMULATION REPORT 20-05-2025.pdf
+│   └── myFMU.py                # FMU wrapper class
+├── FMUDir/
+│   └── systemproject/
+│       ├── PV_model.fmu
+│       ├── WindT.fmu
+│       ├── BatteryModel.fmu
+│       ├── GasTurbine.fmu
+│       ├── Heater.fmu
+│       └── lo.fmu
+└── CO-SIMULATION REPORT 20-05-2025.pdf     # Final report
 
 ---
 

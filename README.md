@@ -1,5 +1,7 @@
 # 🌍 Co-Simulation of a Hybrid Renewable Energy System for District Heating in Cold Climates
 
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2023b-orange)](https://www.mathworks.com/products/matlab.html)
+
 A smart, modular, and real-time controlled energy system designed for Swedish winters — combining PV, wind, gas turbine, and battery FMUs in Python.
 
 ---

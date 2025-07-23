@@ -104,12 +104,4 @@ This project is academic in nature and was developed as part of the 2025 coursew
 
 Please contact the authors prior to any commercial use or distribution
 
-## To Run the Simulation
 
-1. **Install dependencies**:
-   ```bash
-   pip install pandas matplotlib fmpy
-
-FMUDir/systemproject/*.fmu
-python project.py
-python plottedfigures.py

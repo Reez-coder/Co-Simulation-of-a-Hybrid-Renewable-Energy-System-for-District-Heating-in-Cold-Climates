@@ -94,12 +94,9 @@ By running `plottedfigures.py`, you can generate:
 -  ![](Powerprofile.png)
 - 🔄 Grid Export vs SOC
 -  ![](Gridexportpower.png)
-- ♨️ Heater Inlet/Outlet Temperature vs Time
--  ![](Heatenergyprofile.png)
-- 🚨 Constraint Compliance Charts:
--  ![](Constrainschecks.png)
-  - SOC bounds
-  -  ![](HeatControllimits.png)
+- ♨️ Heater Inlet/Outlet Temperature vs Time ![](Heatenergyprofile.png)
+- 🚨 Constraint Compliance Charts:![](Constrainschecks.png)
+- SOC bounds ![](HeatControllimits.png)
 
 
 

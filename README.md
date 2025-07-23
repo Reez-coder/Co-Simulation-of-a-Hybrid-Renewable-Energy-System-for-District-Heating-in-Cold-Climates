@@ -39,7 +39,7 @@ Each subsystem — PV, Wind, Battery, Gas Turbine, Heater, Controller — is mod
 -  **Supervisory Controller FMU** – smart logic to dispatch power and balance constraints  
 
 ### Overview 
-PV, Wind, and Gas Turbine vs Heater Demand ![](Powerprofile.png)
+Block diagram showing Hybrid electrical system with its inputs & outputs ![](BlockdiagramshowingHybridelectricalsystemwithitsinputs&outputs.png)
 ### Simulation Context
 
 -  Realistic **3-day Swedish winter** with sunny, rainy, and snowy periods  
@@ -48,40 +48,22 @@ PV, Wind, and Gas Turbine vs Heater Demand ![](Powerprofile.png)
 
 ## System Parameters
 
-### Battery
-- **Maximum energy capacity**: `1.4 MWh`
-- **Maximum charge/discharge power**: `400,000 W`
-- **Initial state of charge (SOC)**: `0.5`
-- **SOC minimum limit**: `0.20`
-- **SOC maximum limit**: `0.98`
+| **Battery**                    | **Photovoltaic (PV)**         | **Wind Turbine**             |
+|-------------------------------|-------------------------------|------------------------------|
+| Energy capacity: 1.4 MWh      | Panels: 10,000                | Rated power: 350,000 W       |
+| Max power: 400,000 W          | Panel power: 300 W            | Cut-in/out speeds: model-specific |
+| SOC init: 0.5                 | Irradiance ref: 1000 W/m²     | Efficiency: ~90% (assumed)   |
+| SOC min/max: 0.2 / 0.98       | Temp coeff: 0.004 1/°C        |                              |
+|                               | Efficiency: 25%               |                              |
+|                               | Voltage (assumed): 24 V       |                              |
 
-### Photovoltaic (PV)
-- **Number of PV panels**: `10,000`
-- **Rated panel power (STC)**: `300 W`
-- **Reference irradiance**: `1000 W/m²`
-- **Temperature coefficient**: `0.004 1/°C`
-- **Panel efficiency**: `25%`
-- **Assumed output voltage**: `24 V`
+| **Gas Turbine**               | **Heater**                    | **Controller**               |
+|------------------------------|-------------------------------|------------------------------|
+| Electrical η: 0.35           | Cp_water: 4186 J/(kg·K)       | SOC limits: 0.2 – 0.98       |
+| Thermal η: 0.45              | Efficiency: 0.95              | GT power: 350kW – 1MW        |
+| Power min/max: 350kW / 1MW  | Max power: 11,000,000 W       | Battery cap: 1.4 MWh         |
+|                              | Setpoint temp: 363.5 K        | Time step: 900 s             |
 
-### Wind Turbine
-- **Rated power**: `350,000 W`
-- **Cut-in, rated, and cut-out wind speeds**: *(Model-specific)*
-- **Generator efficiency**: *(Assumed ~90%)*
-
-### Gas Turbine
-- **Electrical efficiency**: `0.35`
-- **Thermal (heat recovery) efficiency**: `0.45`
-- **Minimum power output**: `350,000 W`
-- **Maximum power output**: `1,000,000 W`
-
-### Heater
-- **Specific heat capacity of water**: `4186 J/(kg·K)`
-- **Heater efficiency**: `0.95`
-- **Maximum electrical power**: `11,000,000 W`
-- **Setpoint outlet temperature**: `363.5 K`
-
-### Controller
-- **Control time step**: `900 s` (15 minutes)
 
 
 ##  How It Works
@@ -99,19 +81,18 @@ PV, Wind, and Gas Turbine vs Heater Demand ![](Powerprofile.png)
 5. Data stored in `results.csv`
 6. `plottedfigures.py` generates insightful plots
 
----
-
 ## Plots & Analytics
 
 By running `plottedfigures.py`, the following results were obtained:
 
-- PV, Wind, and Gas Turbine vs Heater Demand ![](Powerprofile.png)
-- Grid Export vs SOC ![](Gridexportpower.png)
-- Heater Inlet/Outlet Temperature vs Time ![](Heatenergyprofile.png)
-- Constraint Compliance Charts ![](Constrainschecks.png)
-- SOC bounds ![](HeatControllimits.png)
-- Battery SOC vs Time ![](batterySOC.png)
-
+| **Figure** | **Description** |
+|------------|-----------------|
+| ![](Powerprofile.png)<br><br>**Fig 1**: Power contributions from PV, Wind, and Gas Turbine | Heater demand: **400 kW**. Gas turbine kicks in >**350 kW**. Power exported only when battery is full. |
+| ![](Gridexportpower.png)<br><br>**Fig 2**: Grid Export vs SOC | Export occurs when SOC reaches **~0.98**. Battery prioritized before export. |
+| ![](Heatenergyprofile.png)<br><br>**Fig 3**: Heater Inlet/Outlet Temperature | Inlet: **250–280 K**. Outlet stable at **~363.5 K**. Heater setpoint maintained. |
+| ![](Constrainschecks.png)<br><br>**Fig 4**: Constraint Compliance | SOC: **0.2–0.98**, Turbine: **350 kW–1 MW**, Battery: **±400 kW**. All within limits. |
+| ![](HeatControllimits.png)<br><br>**Fig 5**: SOC Bounds | SOC stays between **0.2** and **0.98** during full simulation. |
+| ![](batterySOC.png)<br><br>**Fig 6**: Battery SOC vs Time | SOC rises with surplus, drops during deficit. Starting at **0.5**. |
 
 
 ## Results Summary

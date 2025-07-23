@@ -100,10 +100,8 @@ By running `plottedfigures.py`, you can generate:
 -  ![](Constrainschecks.png)
   - SOC bounds
   -  ![](HeatControllimits.png)
-  - Gas turbine limits (350–1000 kW)
-  - Battery charge/discharge (±400 kW)
 
----
+
 
 ## ✅ Results Summary
 
@@ -115,8 +113,9 @@ By running `plottedfigures.py`, you can generate:
 | Battery SOC Range      | Always within 0.2 – 0.98        |
 | Grid Export            | Only when SOC ≥ 0.98            |
 | Constraint Violations  | None                            |
+| Gas Turbine Limits     | (350–1000 kW)                   |
+| Battery charge/discharge   | (±400 kW)                   |
 
----
 
 ## 🚀 To Run the Simulation
 

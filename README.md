@@ -52,56 +52,36 @@ Each subsystem — PV, Wind, Battery, Gas Turbine, Heater, Controller — is mod
 
 ---
 
-## Project Structure
-
-├── project.py                   # Main co-simulation script
-├── plottedfigures.py           # Plotting script for result analysis
-├── data.csv                    # Environmental input data
-├── results.csv                 # Output simulation results
-├── myFMU/
-│   └── myFMU.py                # FMU wrapper class
-├── FMUDir/
-│   └── systemproject/
-│       ├── PV_model.fmu
-│       ├── WindT.fmu
-│       ├── BatteryModel.fmu
-│       ├── GasTurbine.fmu
-│       ├── Heater.fmu
-│       └── lo.fmu
-└── CO-SIMULATION REPORT 20-05-2025.pdf     # Final report
-
----
-
-## 🧪 How It Works
+##  How It Works
 
 1. `project.py` reads data from `data.csv`
 2. All FMUs are instantiated via a Python wrapper
 3. Every 15-minute interval:
    - PV & Wind generate power based on weather
    - Controller decides:
-     - 🔥 Gas Turbine output
-     - 🔋 Battery charge/discharge
-     - ⚡ Grid export logic
+     - Gas Turbine output
+     - Battery charge/discharge
+     - Grid export logic
    - Heater uses power to heat water
 4. Data stored in `results.csv`
 5. `plottedfigures.py` generates insightful plots
 
 ---
 
-## 📊 Plots & Analytics
+## Plots & Analytics
 
 By running `plottedfigures.py`, the following results were obtained:
 
 - PV, Wind, and Gas Turbine vs Heater Demand ![](Powerprofile.png)
-- 🔄 Grid Export vs SOC ![](Gridexportpower.png)
-- ♨️ Heater Inlet/Outlet Temperature vs Time ![](Heatenergyprofile.png)
-- 🚨 Constraint Compliance Charts ![](Constrainschecks.png)
+- Grid Export vs SOC ![](Gridexportpower.png)
+- Heater Inlet/Outlet Temperature vs Time ![](Heatenergyprofile.png)
+- Constraint Compliance Charts ![](Constrainschecks.png)
 - SOC bounds ![](HeatControllimits.png)
 - Battery SOC vs Time ![](batterySOC.png)
 
 
 
-## ✅ Results Summary
+## Results Summary
 
 | Metric                 | Result                          |
 |------------------------|---------------------------------|
@@ -115,7 +95,7 @@ By running `plottedfigures.py`, the following results were obtained:
 | Battery charge/discharge   | (±400 kW)                   |
 
 
-## 🚀 To Run the Simulation
+## To Run the Simulation
 
 1. **Install dependencies**:
    ```bash

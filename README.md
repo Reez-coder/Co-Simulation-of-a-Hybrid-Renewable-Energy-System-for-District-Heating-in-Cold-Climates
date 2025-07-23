@@ -89,7 +89,7 @@ Each subsystem — PV, Wind, Battery, Gas Turbine, Heater, Controller — is mod
 By running `plottedfigures.py`, you can generate:
 
 - 🔋 Battery SOC vs Time
-- ![](Co-Simulation-of-a-Hybrid-Renewable-Energy-System-for-District-Heating-in-Cold-Climates/battery%20SOC.png)
+- ![](Co-Simulation-of-a-Hybrid-Renewable-Energy-System-for-District-Heating-in-Cold-Climates/batterySOC.png)
 - ⚡ PV, Wind, and Gas Turbine vs Heater Demand
 - 🔄 Grid Export vs SOC
 - ♨️ Heater Inlet/Outlet Temperature vs Time

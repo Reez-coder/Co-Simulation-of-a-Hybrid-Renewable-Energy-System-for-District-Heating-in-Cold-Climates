@@ -48,21 +48,22 @@ Block diagram showing Hybrid electrical system with its inputs & outputs ![](Blo
 
 ## System Parameters
 
-| **Battery**                    | **Photovoltaic (PV)**         | **Wind Turbine**             |
-|-------------------------------|-------------------------------|------------------------------|
-| Energy capacity: 1.4 MWh      | Panels: 10,000                | Rated power: 350,000 W       |
-| Max power: 400,000 W          | Panel power: 300 W            | Cut-in/out speeds: model-specific |
-| SOC init: 0.5                 | Irradiance ref: 1000 W/m²     | Efficiency: ~90% (assumed)   |
-| SOC min/max: 0.2 / 0.98       | Temp coeff: 0.004 1/°C        |                              |
-|                               | Efficiency: 25%               |                              |
-|                               | Voltage (assumed): 24 V       |                              |
+| **Battery**                      | **Photovoltaic (PV)**          | **Wind Turbine**                   |
+|----------------------------------|--------------------------------|------------------------------------|
+| Energy capacity: 1.4 MWh         | Number of panels: 10,000       | Rated power: 350,000 W            |
+| Max power: 400,000 W             | Panel power (STC): 300 W       | Cut-in/out speeds: model-specific |
+| SOC initial: 0.5                 | Reference irradiance: 1000 W/m²| Efficiency: ~90% (assumed)        |
+| SOC range: 0.2 – 0.98            | Temp coefficient: 0.004 1/°C   |                                    |
+|                                  | Efficiency: 25%                |                                    |
+|                                  | Output voltage (assumed): 24 V |                                    |
 
-| **Gas Turbine**               | **Heater**                    | **Controller**               |
-|------------------------------|-------------------------------|------------------------------|
-| Electrical η: 0.35           | Cp_water: 4186 J/(kg·K)       | SOC limits: 0.2 – 0.98       |
-| Thermal η: 0.45              | Efficiency: 0.95              | GT power: 350kW – 1MW        |
-| Power min/max: 350kW / 1MW  | Max power: 11,000,000 W       | Battery cap: 1.4 MWh         |
-|                              | Setpoint temp: 363.5 K        | Time step: 900 s             |
+| **Gas Turbine**                  | **Heater**                     | **Controller**                    |
+|----------------------------------|--------------------------------|------------------------------------|
+| Electrical efficiency: 0.35      | Water heat capacity: 4186 J/kg·K| SOC limits: 0.2 – 0.98            |
+| Thermal efficiency: 0.45         | Heater efficiency: 0.95        | GT output range: 350 kW – 1 MW    |
+| Power range: 350 kW – 1 MW       | Max electrical power: 11 MW    | Battery capacity: 1.4 MWh         |
+|                                  | Outlet temp setpoint: 363.5 K  | Dispatch time step: 900 s         |
+
 
 
 
@@ -94,20 +95,14 @@ By running `plottedfigures.py`, the following results were obtained:
 | ![](HeatControllimits.png)<br><br>**Fig 5**: SOC Bounds | SOC stays between **0.2** and **0.98** during full simulation. |
 | ![](batterySOC.png)<br><br>**Fig 6**: Battery SOC vs Time | SOC rises with surplus, drops during deficit. Starting at **0.5**. |
 
+## Credits
+Team:
+Rashida Olomowewe, Walmy Fernández, Oluwajoba Oyefusi, Sofia Farakhutdinova, Morris Nyantee, Dang Chuong Ta
 
-## Results Summary
+## 📜License
+This project is academic in nature and was developed as part of the 2025 coursework for the *Co-Simulation* module within the **Master's in Decentralized Smart Energy Systems** at *Université de Lorraine – Master ENERGIE*.
 
-| Metric                 | Result                          |
-|------------------------|---------------------------------|
-| Heater outlet temp     | Maintained at ~363.5 K          |
-| PV & Wind Utilization  | Maximized                       |
-| Gas Turbine Usage      | Only when needed                |
-| Battery SOC Range      | Always within 0.2 – 0.98        |
-| Grid Export            | Only when SOC ≥ 0.98            |
-| Constraint Violations  | None                            |
-| Gas Turbine Limits     | (350–1000 kW)                   |
-| Battery charge/discharge   | (±400 kW)                   |
-
+Please contact the authors prior to any commercial use or distribution
 
 ## To Run the Simulation
 
